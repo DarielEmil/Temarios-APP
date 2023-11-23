@@ -1,19 +1,13 @@
 const express = require("express");
-const bodyParser = require("body-parser");
-const connection = require("./context/connection");
 const dotenv = require("dotenv");
 
+//ROUTES
+const signupRouter = require("./router/signup");
+//CONFIG
 const app = express();
 dotenv.config();
 
-app.use(bodyParser.json());
-
-app.get("/", (req, res) => {
-   res.json({ working: "THE APP IS WORKING" });
-});
-
-app.listen(process.env.PORT, () => {
-   console.log("server started on port 5000");
-});
+app.use()
+app.listen(process.env.PORT, () => {});
 
 module.exports = app;
