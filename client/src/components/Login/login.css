@@ -55,20 +55,18 @@
   border: 0;
   background-color: #e3e3e3;
   position: absolute;
-  top: 0;
+  top: 14;
   left: 0;
   border-radius: 10px;
   width: 437px;
   height: 51.62px;
-}
-.insert-your-username {
-  position: absolute;
-  top: 14.09px;
-  left: 16.56px;
+  padding: 0 16.56px; 
   font-weight: 500;
-  display: inline-block;
-  width: 293.03px;
-  height: 20.13px;
+}
+.rectangle-insert-your-nam::placeholder  {
+  font-size: 16px; 
+  font-weight: 500; 
+  color: #b0b0b0;
 }
 .field {
   position: absolute;
@@ -122,6 +120,7 @@
   height: 34.4px;
 }
 .button {
+  cursor: pointer;
   position: absolute;
   top: 605px;
   left: 219px;
