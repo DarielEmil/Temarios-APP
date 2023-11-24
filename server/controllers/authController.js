@@ -1,3 +1,4 @@
+const bcrypt = require('bcrypt');
 const User = require('../models/User');
 
 const iniciarSesion = async (req, res) => {
@@ -15,8 +16,10 @@ const iniciarSesion = async (req, res) => {
             });
         }
 
+        const passwordValido = await bcrypt.compare(password, usuario.password);
+
         // Confirmar los passwords
-        if(usuario.password !== password) {
+        if(!passwordValido) {
             console.log("pass NO")
 
             return res.status(400).json({
