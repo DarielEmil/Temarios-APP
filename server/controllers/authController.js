@@ -26,7 +26,9 @@ const iniciarSesion = async (req, res) => {
         }
 
         // Redireccionar al usuario a la ruta principal, pero mientras tanto mostramos "conectado" en consola
+        console.log("INICIADO")
         return res.redirect("/")
+
     } catch (error) {
         console.log("OTR")
         console.log(error);
