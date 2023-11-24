@@ -52,7 +52,6 @@ const Login = () => {
         body: JSON.stringify({
           username,
           password,
-          // Otros datos necesarios para el registro
         }),
       });
 
@@ -60,13 +59,10 @@ const Login = () => {
         throw new Error("Error al registrar el usuario");
       }
 
-      // El usuario se registró exitosamente
       console.log("Usuario registrado con éxito");
-      // Puedes redirigir al usuario a la página de inicio de sesión u otra página.
     } catch (error) {
       setError(error.message || "Error durante el registro");
       console.error("Error durante el registro:", error.message);
-      // Puedes mostrar un mensaje de error al usuario o realizar otras acciones según tus necesidades.
     }
   };
 
