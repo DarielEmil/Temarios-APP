@@ -3,6 +3,7 @@ const bodyParser = require("body-parser");
 const connection = require("./context/connection");
 const dotenv = require("dotenv");
 const authRoutes = require("./router/login");
+const registerRoutes = require("./router/register");
 const cors = require("cors");
 
 const app = express();
@@ -17,6 +18,7 @@ app.get("/", (req, res) => {
 });
 
 app.use("/api/", authRoutes);
+app.use("/api/", registerRoutes);
 
 app.listen(process.env.PORT, () => {
    console.log("server started on port 5000");
