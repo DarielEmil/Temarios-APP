@@ -29,6 +29,10 @@ const registrarUsuario = async (req, res) => {
 
         // Redireccionar al usuario a la ruta principal, pero mientras tanto mostramos "registrado" en consola
         console.log('Registrado');
+        return res.status(200).json({
+            ok: true,
+            msg: 'El usuario ha sido registrado con exito'
+        })
     } catch (error) {
         res.status(500).json({
             ok: false,
