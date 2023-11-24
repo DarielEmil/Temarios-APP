@@ -181,3 +181,8 @@ p a {
     color: white;
 
 }
+
+.error{
+    font-size: 15px;
+    color: red;
+}
