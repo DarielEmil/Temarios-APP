@@ -1,6 +1,5 @@
 import { Route } from "react-router-dom/cjs/react-router-dom";
 import "./App.css";
-import Example from "./components/Example/Example";
 import Register from "./components/Register/Register";
 import { BrowserRouter as Router, Switch } from "react-router-dom/cjs/react-router-dom.min";
 
@@ -15,9 +14,7 @@ function App() {
             </Switch>
          </div>
       </Router>
-
    );
-
 }
 
 export default App;

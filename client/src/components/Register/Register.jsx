@@ -1,9 +1,8 @@
 import { useState } from 'react';
 import styles from "./register.module.css"
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { faRightToBracket } from '@fortawesome/free-solid-svg-icons';
 import Book from "../../assets/images/book.png";
 import Background from "../../assets/images/Background.png";
+import { Link } from "react-router-dom/cjs/react-router-dom";
 
 const Register = () => {
 
@@ -135,7 +134,7 @@ const Register = () => {
                         {formErrors.confirmPassword && <p className="error" style={{ color: 'red', fontSize: '12px', textAlign: 'Start' }}>{formErrors.confirmPassword}</p>}
                     </div>
                 </div>
-                <p><a href="#" style={{ fontSize: '20px' }}>Forget your password?</a></p>
+                <p><Link to="#" style={{ fontSize: '20px' }}>Forget your password?</Link></p>
                 <button className={styles.btnRegister} type="submit">SIGN UP</button>
             </form>
         </div>
