@@ -11,7 +11,7 @@ const iniciarSesion = async (req, res) => {
             console.log("USUARIO NO")
             return res.status(400).json({
                 ok: false,
-                msg: 'Revisa los datos ingresados'
+                message: 'Revisa los datos ingresados'
             });
         }
 
@@ -21,12 +21,15 @@ const iniciarSesion = async (req, res) => {
 
             return res.status(400).json({
                 ok: false,
-                msg: 'Revisa los datos ingresados',
+                message: 'Revisa los datos ingresados',
             });
         }
 
         // Redireccionar al usuario a la ruta principal, pero mientras tanto mostramos "conectado" en consola
-        console.log('Conectado');
+        return res.status(200).json({
+            ok: true,
+            message: 'Inicio correcto',
+        });
     } catch (error) {
         console.log("OTR")
         console.log(error);
