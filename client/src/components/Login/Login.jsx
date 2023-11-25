@@ -12,6 +12,7 @@ const Login = () => {
     setUsername(e.target.value);
     setUsernameError(""); // Limpiar mensaje de error al cambiar el username
   };
+<<<<<<< HEAD:client/src/components/Login/Login.js
   
   const handlePasswordChange = (e) => {
     setPassword(e.target.value);
@@ -38,8 +39,61 @@ const Login = () => {
     } else {
       // Datos incorrectos, muestra un mensaje de error
       alert("Nombre de usuario o contraseña incorrectos");
+=======
+
+  const onSubmit = async (e) => {
+    e.preventDefault();
+
+    if (validateForm()) {
+      try {
+        const response = await fetch("Aqui ponen la url de la api", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            username,
+            password,
+          }),
+        });
+
+        if (!response.ok) {
+          throw new Error("Credenciales incorrectas");
+        }
+
+        console.log("Formulario válido. Enviar datos...");
+      } catch (err) {
+        setError(err.message || "Hubo un problema al iniciar sesión");
+      }
     }
   };
+
+  const handleSignUp = async () => {
+    try {
+      const response = await fetch("igualemente aqui la url de la Api", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          username,
+          password,
+        }),
+      });
+
+      if (!response.ok) {
+        throw new Error("Error al registrar el usuario");
+      }
+
+      console.log("Usuario registrado con éxito");
+    } catch (error) {
+      setError(error.message || "Error durante el registro");
+      console.error("Error durante el registro:", error.message);
+>>>>>>> 4f5807df13f633310c8897bc3d731f01ef0db6c5:client/src/components/Login/Login.jsx
+    }
+  };
+  
+
   return (
     <div className="login">
       <div className="signin">
