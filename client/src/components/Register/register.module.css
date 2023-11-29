@@ -71,23 +71,19 @@ h1,h2{
 
 .labelinput {
     display: flex;
-    flex-direction: column;
-    /* Volvemos a la disposición en columna */
-    width: 85%;
-    /* Ajusta el ancho para ambos campos */
+    flex-direction: column;/* Volvemos a la disposición en columna */
+    width: 85%;/* Ajusta el ancho para ambos campos */
 }
 
 .labelinput label {
     margin-bottom: 5px;
     align-self: flex-start;
     color: white;
-    /* Alinea el label al principio */
 }
 
 input {
     padding: 8px;
-    border-radius: 8px;
-    /* Bordes redondos */
+    border-radius: 8px; /* Bordes redondos */
     border: 1px solid var(--color-darkslateblue);
     margin-top: 5px;
     width: 100%;
@@ -99,8 +95,8 @@ input {
 input::placeholder {
     color: var(--color-darkgray);
     font-family: var(--font-inter);
-    /* Color del placeholder */
 }
+
 /* Estilos específicos para los botones */
 .button {
     font-size: var(--font-size-13xl);
@@ -147,15 +143,11 @@ input::placeholder {
 .rightSection {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    /* Alinea los elementos al centro del contenedor */
-    align-items: center;
-    /* Centra los elementos verticalmente */
-    width: 50%;
-    /* Ancho de la parte derecha */
+    justify-content: center;/* Alinea los elementos al centro del contenedor */
+    align-items: center;/* Centra los elementos verticalmente */
+    width: 50%;/* Ancho de la parte derecha */
     background-color: white;
-    padding: 20px;
-    /* Espaciado interno */
+    padding: 20px;/* Espaciado interno */
 }
 
 .iconText {
@@ -183,6 +175,25 @@ p a {
 }
 
 .error{
+    margin-top: -5%;
     font-size: 15px;
     color: red;
 }
+
+.error-message {
+    background-color: red;
+    color: white;
+    padding: 10px;
+    margin-top: 10px;
+  }
+
+/* Estilos para validaciones */
+  .InputField {
+    border: none;
+    border-bottom: 1px solid red;
+  }
+  
+.inputFieldEmpty {
+    border: none;
+    border-bottom: 1px solid red;
+  }
