@@ -1,0 +1,191 @@
+body {
+  margin: 0;
+  padding: 0;
+  overflow: auto;
+}
+
+/* Estilos para el contenedor principal */
+.LandingContainer {
+  display: flex;
+  background-color: #70B0FC;
+  overflow: auto;
+}
+
+/* Estilos para la sección izquierda */
+.leftSection {
+  flex: 1;
+  padding: 20px;
+  position: relative;
+}
+
+/* Landing.module.css */
+
+.imageContainer {
+  position: relative;
+  width: 80%;
+  margin: 0 auto;
+}
+
+.moverDerecha {
+  position: relative;
+  left: 200px;
+  top: 200px;
+}
+
+
+.imageContainer img {
+  /*position: absolute;*/
+  /*top: 50%;*/
+  /*left: 50%;*/
+  /*transform: translate(-50%, -50%);*/
+  width: 100%;
+  /* Ajusta el tamaño de la imagen */
+  max-width: 400px;
+  /* Define el ancho máximo */
+  z-index: 1;
+  align-self: flex-start;
+}
+
+.textSection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+/* Estilos para el texto y el botón */
+.center {
+  text-align: center;
+}
+
+.moverBotonAbajo {
+  margin-top: 427px;
+  /* Ajusta la cantidad hacia abajo según tus necesidades */
+}
+
+.leftSection {
+  display: flex;
+  flex-direction: column;
+}
+
+.signupButton {
+  width: 80%;
+  background-color: #5F69FE;
+  color: white;
+  font-family: Nunito;
+  padding: 10px;
+  border: none;
+  border-radius: 15px;
+  margin-top: 20px;
+  cursor: pointer;
+  text-decoration: none;
+
+
+}
+.signupButton1{
+  width: 59%;
+  background-color: #5F69FE;
+  color: white;
+  font-family: Nunito;
+  padding: 10px;
+  border: none;
+  border-radius: 15px;
+  margin-top: 20px;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.moverAbajo {
+  margin-top: 200px;
+}
+
+.signupButton:hover {
+  background-color: #1e88e5;
+}
+.signupButton1:hover {
+  background-color: #1e88e5;
+}
+
+/* Estilos para la sección derecha */
+.rightSection {
+  flex: 0.8;
+  background-color: white;
+  border-top-left-radius: 20px;
+  font-style: normal;
+  border-bottom-left-radius: 20px;
+  padding: 100px;
+  display: flex;
+  flex-direction: column;
+  margin-top: 52px;
+  /* Agrega espacio para el menú */
+}
+
+.objectiveSection,
+.benefitsSection {
+  margin-bottom: 20px;
+  padding: 20px;
+
+}
+
+h3 {
+  color: black;
+  font-family: Poppins;
+  font-weight: bold;
+}
+
+p {
+  color:black;
+  font-family: Nunito;
+  font-style: normal;
+  font-weight: normal; 
+}
+/* styles.css o Landing.module.css */
+
+.organizedParagraph {
+  text-align: justify;
+  line-height: 1.6;
+  letter-spacing: 0.02em; /* Espaciado predeterminado entre letras */
+  margin-bottom: 20px;
+}
+
+.adjustedLetter {
+  letter-spacing: 0.01em;
+   /* Ajusta el espaciado para esta letra específica */
+}
+
+/* Estilos para el menú superior */
+.topMenu {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  z-index: 2;
+  
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logoImg {
+  max-width: 30px;
+  margin-right: 10px;
+}
+
+.studyPath {
+  font-weight: bold;
+  font-family: Poppins;
+}
+
+h2 {
+  color: black;
+
+
+}
