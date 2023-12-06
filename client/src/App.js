@@ -1,7 +1,3 @@
-<<<<<<< HEAD
-=======
-
->>>>>>> feature/login-frontend
 import { Route } from "react-router-dom/cjs/react-router-dom";
 import "./App.css";
 import Register from "./components/Register/Register";
