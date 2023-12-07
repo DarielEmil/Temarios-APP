@@ -48,36 +48,37 @@ const Register = () => {
    const handleSubmit = (e) => {
       e.preventDefault();
       const errors = {};
-
+      let alertMessage = true;
       // Validaciones
 
       // Validación de campos requeridos (por ejemplo, nombre y apellido)
       if (!formData.firstName.trim()) {
          errors.firstName = "Por favor, ingresa tu nombre";
-         alert("Por favor, ingresa tu nombre");
+         alertMessage = false;
       }
       if (!formData.lastName.trim()) {
          errors.lastName = "Por favor, ingresa tu apellido";
-         alert("Por favor, ingresa tu apellido");
+         alertMessage = false;
       }
       if (!formData.username.trim()) {
          errors.username = "Por favor, ingresa tu nombre de usuario";
-         alert("Por favor, ingresa tu nombre de usuario");
+         alertMessage = false;
       }
 
       // Validación del email (expresiones regulares)
       const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
       if (!emailRegex.test(formData.email)) {
          errors.email = "El email no es válido";
-         alert("El email no es válido");
+         alertMessage = false;
       }
 
+      if (!alertMessage) alert("Existen campos vacíos");
       // Validación de la contraseña
-      if (formData.password !== formData.confirmPassword) {
+      if (alertMessage && formData.password !== formData.confirmPassword) {
          errors.confirmPassword = "Las contraseñas no coinciden";
          alert("Las contraseñas no coinciden");
       }
-      if (formData.password.length < 8) {
+      if (alertMessage && formData.password.length < 8) {
          errors.password = "La contraseña debe tener al menos 8 caracteres";
          alert("La contraseña debe tener al menos 8 caracteres");
       }
@@ -141,11 +142,6 @@ const Register = () => {
                      <input type="password" id="confirmPassword" name="confirmPassword" value={formData.confirmPassword} onChange={handleInputChange} placeholder="Confirma tu contraseña" className={touchedFields.confirmPassword && formData.confirmPassword.trim() === "" ? styles.inputFieldEmpty : styles.inputField} />
                   </div>
                </div>
-               <p>
-                  <Link to="#" style={{ fontSize: "20px" }}>
-                     Forget your password?
-                  </Link>
-               </p>
                <button className={styles.btnRegister} type="submit">
                   SIGN UP
                </button>
