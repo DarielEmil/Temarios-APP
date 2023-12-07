@@ -3,6 +3,7 @@ import styles from "./register.module.css";
 import Book from "../../assets/images/book.png";
 import Background from "../../assets/images/Background.png";
 import { Link } from "react-router-dom/cjs/react-router-dom";
+import { env } from "../../config";
 
 const Register = () => {
    const [formData, setFormData] = useState({
@@ -45,6 +46,26 @@ const Register = () => {
       });
    };
 
+   const signUp = async ({ firstName, lastName, username, email, password }) => {
+      const apiKey = env.API_URL + "register";
+      try {
+         const result = await fetch(apiKey, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+               name: "Juancito",
+               lastName: "Ro",
+               username: "juan321",
+               email: "juan321@gmail.com",
+               password: "1234",
+            }),
+         });
+         const json = await result.json();
+         console.log(json);
+      } catch (e) {
+         console.log(e);
+      }
+   };
    const handleSubmit = (e) => {
       e.preventDefault();
       const errors = {};
@@ -88,6 +109,7 @@ const Register = () => {
       if (Object.keys(errors).length === 0) {
          // Envío del formulario si no hay errores
          // Aquí se implementa una función para enviar los datos
+         signUp(formData);
       } else {
          setFormErrors(errors);
 
