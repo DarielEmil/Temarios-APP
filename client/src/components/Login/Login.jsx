@@ -18,23 +18,47 @@ const Login = () => {
       setPasswordError(""); // Limpiar mensaje de error al cambiar la contraseña
    };
 
+   const signIn = async (email, pass) => {
+      try {
+         const result = await fetch("http://localhost:5000/login", {
+            method: "POST",
+            body: JSON.stringify({
+               email: email,
+               password: pass,
+            }),
+         });
+         const json = await result.json();
+         console.log(json);
+      } catch (e) {
+         console.log(e);
+      }
+   };
+
    const handleLogin = () => {
+      let message = [false, false];
       // Validación de campos vacíos
       if (!username.trim()) {
-         setUsernameError("Por favor, ingresa tu nombre de usuario.");
+         setUsernameError("Por favor, completa el campo con tu nombre de usuario.");
+         message[0] = true;
       }
 
       if (!password.trim()) {
-         setPasswordError("Por favor, ingresa tu contraseña.");
+         setPasswordError("Por favor, completa el campo con tu contraseña.");
+         message[1] = true;
       }
 
       // Simula una validación simple; deberías realizar la autenticación en tu backend
-      if (username === "usuario" && password === "contraseña") {
+      if (username === "ada@gmail.com" && password === "1234") {
+         signIn(username, password);
          alert("Login exitoso. Redirigiendo...");
       } else {
          alert("Nombre de usuario o contraseña incorrectos");
-         setUsernameError("Por favor, ingresa un nombre de usuario correcto.");
-         setPasswordError("Por favor, ingresa una contraseña correcta.");
+         if (!message[0]) {
+            setUsernameError("Por favor, ingresa un nombre de usuario correcto.");
+         }
+         if (!message[1]) {
+            setPasswordError("Por favor, ingresa una contraseña correcta.");
+         }
       }
    };
    return (
