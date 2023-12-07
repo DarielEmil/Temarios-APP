@@ -173,6 +173,7 @@ body {
 }
 .create-your-account,
 .rectangle-button1 {
+  text-decoration: none;
   cursor: pointer;
   border: 0;
   padding: 0;

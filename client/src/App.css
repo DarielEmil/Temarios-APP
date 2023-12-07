@@ -1,3 +1,7 @@
+*{
+  font-family: var(--font-nunito);
+}
+
 .App {
   text-align: center;
 }

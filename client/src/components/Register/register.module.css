@@ -126,6 +126,7 @@ input::placeholder {
 }
 
 .btnLogin {
+    text-decoration: none;
     font-size: var(--font-size-5xl);
     color: var(--color-white);
     border-radius: var(--br-5xs);
