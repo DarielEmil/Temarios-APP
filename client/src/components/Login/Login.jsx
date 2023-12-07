@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "./login.css";
 import { Link } from "react-router-dom/cjs/react-router-dom";
+import { env } from "../../config.js";
 
 const Login = () => {
    const [username, setUsername] = useState("");
@@ -19,12 +20,14 @@ const Login = () => {
    };
 
    const signIn = async (email, pass) => {
+      const apiKey = env.API_URL + "login";
       try {
-         const result = await fetch("http://localhost:5000/login", {
+         const result = await fetch(apiKey, {
             method: "POST",
+            headers: { "Content-Type": "application/json" },
             body: JSON.stringify({
-               email: email,
-               password: pass,
+               email: "ada@gmail.com",
+               password: "1234",
             }),
          });
          const json = await result.json();
@@ -48,7 +51,7 @@ const Login = () => {
       }
 
       // Simula una validación simple; deberías realizar la autenticación en tu backend
-      if (username === "ada@gmail.com" && password === "1234") {
+      if (username === "ada" && password === "1234") {
          signIn(username, password);
          alert("Login exitoso. Redirigiendo...");
       } else {
