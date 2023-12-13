@@ -4,7 +4,7 @@ const { createPrompt, createJSON } = require("../util/planCreationOptions");
 const createPlan = async (req, res) => {
    const { questions, language } = req.body;
 
-   const API_KEY = "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";
+   const API_KEY = process.env.API_KEY;
    let result = null;
    try {
       const prompt = createPrompt(questions, language);
