@@ -12,7 +12,7 @@ const Landing = () => {
                <Link to="/">
                   <img src={Book} alt="Logo" className={styles.logoImg} />
                </Link>
-               <span className={styles.studyPath}>StudyPat</span>
+               <span className={styles.studyPath}>StudyPath</span>
             </div>
          </nav>
          <div className={styles.leftRightContainer}>
