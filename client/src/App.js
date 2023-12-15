@@ -6,7 +6,6 @@ import { BrowserRouter as Router, Switch } from "react-router-dom/cjs/react-rout
 import Landing from "./components/LandingPage/Landing";
 import LandingSigned from "./components/LandingPage/LandingSigned";
 import Main from "./components/MainScreen/MainScreen";
-import CreateStudyPlan from "./components/CreateStudyPlan/CreateStudyPlan";
 import { useEffect } from "react";
 import { env } from "./config";
 
