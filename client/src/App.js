@@ -39,9 +39,7 @@ function App() {
                   <Route path="/main">
                      <Main />
                   </Route>
-                  <Route path="/create">
-                     <CreateStudyPlan />
-                  </Route>
+
                   <Route path="/">
                      <LandingSigned />
                   </Route>
