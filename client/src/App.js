@@ -36,7 +36,6 @@ function App() {
    return (
       <Router>
          <div className="App">
-            {localStorage.getItem("token") ? (
                <Switch>
                   <Route path="/main">
                      <Main />
@@ -48,19 +47,6 @@ function App() {
                      <LandingSigned />
                   </Route>
                </Switch>
-            ) : (
-               <Switch>
-                  <Route path="/signup">
-                     <Register />
-                  </Route>
-                  <Route path="/login">
-                     <Login />
-                  </Route>
-                  <Route path="/">
-                     <Landing />
-                  </Route>
-               </Switch>
-            )}
          </div>
       </Router>
    );
