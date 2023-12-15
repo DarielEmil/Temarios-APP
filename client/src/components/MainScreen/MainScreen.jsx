@@ -24,7 +24,7 @@ const Main = () => {
          <br></br>
          <h1 className={styles.welcomeText}>Bienvenido a StudyPath</h1>
          <br></br>
-         <Link to="/">
+         <Link to="/create">
          <button className={styles.createButton}><FontAwesomeIcon icon={faPlus} style={{color: "#4f67e8",}} /> Crea un plan de estudio</button>
          </Link>
          <br></br>
