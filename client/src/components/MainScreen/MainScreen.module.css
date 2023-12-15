@@ -77,10 +77,10 @@ body {
 /* Sección de plan de estudio */
 
 .section {
+   margin: 80px;
    background-color: #B1BBEE; /* Fondo azul de la sección */
    padding: 40px;
-   border-top-left-radius: 30px;
-   border-top-right-radius: 30px;
+   border-radius: 30px;
 }
 
 .header {
@@ -99,6 +99,10 @@ body {
    font-size: 30px;
 }
 
+.search {
+   position: relative;
+}
+
 .searchInput {
    background-color: white; /* Fondo blanco del input de búsqueda */
    color: #4F67E8;
@@ -109,15 +113,15 @@ body {
 }
 
 .searchIcon {
-   /* Estilos del icono de búsqueda */
-   /* Ajusta el tamaño, posición, etc. */
    position: absolute;
-   top: 39%;
-   right: 120px;
-   transform: translateY(-50%);
-   z-index: 1; /* Asegura que esté sobre el input */
+   right: -30px;
+   top: 20px;
    pointer-events: none; /* Evita que el clic se direccione al ícono */
    cursor:pointer
+}
+
+.searchIcon:hover{
+   cursor: pointer;
 }
 
 .cardContainer {
@@ -132,11 +136,10 @@ body {
    background-color: #4C519C; /* Fondo azul más oscuro */
    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
    color: white; /* Color del texto en las tarjetas */
-   width: calc(20.20% - 10px); /* Ancho ajustado para tres tarjetas en una fila */
+   width: calc(27% - 10px); /* Ancho ajustado para tres tarjetas en una fila */
    padding: 20px;
    border-radius: 15px;
    margin-bottom: 20px;
-   cursor: pointer;
 }
 
 .cardHeader {
@@ -160,12 +163,16 @@ body {
 }
 
 .cardContent h2 {
+   text-decoration: none;
    text-align: start;
    color: white;
    font-weight:lighter;
+   font-size: 30px;
 }
 .cardContent p {
+   text-decoration: none !important;
    text-align: justify;
    color: #D9D9D9;
    font-weight: lighter;
+   font-size: 20px;
 }

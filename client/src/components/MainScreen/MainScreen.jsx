@@ -7,9 +7,21 @@ import { faPlus } from "@fortawesome/free-solid-svg-icons";
 import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
 import { useHistory } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { env } from "../../config";
 
 const Main = () => {
    const history = useHistory();
+   const [planList, setPlanList] = useState([]);
+
+   useEffect(() => {
+      async function getPlans() {
+         const plans = await fetch(env.API_URL + `get-plan/user=${localStorage.getItem("user")}`);
+         const result = await plans.json();
+         setPlanList(await result.content);
+      }
+      getPlans();
+   }, []);
 
    function logOut() {
       localStorage.removeItem("token");
@@ -35,13 +47,12 @@ const Main = () => {
          <br></br>
          <h1 className={styles.welcomeText}>Bienvenido a StudyPath</h1>
          <br></br>
-         <Link to="/create">
-         <button className={styles.createButton}><FontAwesomeIcon icon={faPlus} style={{color: "#4f67e8",}} /> Crea un plan de estudio</button>
-         <Link to="/">
+         <Link to="/create" style={{ textDecoration: "none" }}>
             <button className={styles.createButton}>
-               <FontAwesomeIcon icon={faPlus} style={{ color: "#4f67e8" }} /> Crea un plan de estudio
+               <FontAwesomeIcon icon={faPlus} style={{ color: "#4f67e8", textDecoration: "none" }} /> Crea un plan de estudio
             </button>
          </Link>
+
          <br></br>
          <br></br>
          <br></br>
@@ -63,84 +74,22 @@ const Main = () => {
             <div className={styles.cardContainer}>
                {/* Se generan las tarjetas aquí */}
                {/* Tarjeta 1 */}
-               <div className={styles.card}>
-                  <div className={styles.cardHeader}>
-                     <div className={styles.checkbox}></div>
-                     <div className={styles.settingsIcon}>
-                        <FontAwesomeIcon icon={faBars} style={{ color: "white", fontSize: "25px" }} />
+               {planList.map((plan, i) => {
+                  return (
+                     <div key={i} className={styles.card}>
+                        <div className={styles.cardHeader}>
+                           <div className={styles.checkbox}></div>
+                           <div className={styles.settingsIcon}>
+                              <FontAwesomeIcon icon={faBars} style={{ color: "white", fontSize: "25px" }} />
+                           </div>
+                        </div>
+                        <Link to={`/plan/${plan._id}`} state={{ prop: "hola" }} style={{ textDecoration: "none" }} className={styles.cardContent}>
+                           <h2>{JSON.parse(plan.json).titulo} </h2>
+                           <p>{JSON.parse(plan.json).descripcion}</p>
+                        </Link>
                      </div>
-                  </div>
-                  <div className={styles.cardContent}>
-                     <h2>Titulo del plan</h2>
-                     <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Porro aspernatur suscipit ex labore exercitationem quidem commodi! Nesciunt, nemo, corporis mollitia laborum quaerat qui iure omnis deleniti, repellat maxime soluta hic!</p>
-                  </div>
-               </div>
-               {/* Tarjeta 2 */}
-               <div className={styles.card}>
-                  <div className={styles.cardHeader}>
-                     <div className={styles.checkbox}></div>
-                     <div className={styles.settingsIcon}>
-                        <FontAwesomeIcon icon={faBars} style={{ color: "white", fontSize: "25px" }} />
-                     </div>
-                  </div>
-                  <div className={styles.cardContent}>
-                     <h2>Titulo del plan</h2>
-                     <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Porro aspernatur suscipit ex labore exercitationem quidem commodi! Nesciunt, nemo, corporis mollitia laborum quaerat qui iure omnis deleniti, repellat maxime soluta hic!</p>
-                  </div>
-               </div>
-               {/* Tarjeta 3 */}
-               <div className={styles.card}>
-                  <div className={styles.cardHeader}>
-                     <div className={styles.checkbox}></div>
-                     <div className={styles.settingsIcon}>
-                        <FontAwesomeIcon icon={faBars} style={{ color: "white", fontSize: "25px" }} />
-                     </div>
-                  </div>
-                  <div className={styles.cardContent}>
-                     <h2>Titulo del plan</h2>
-                     <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Porro aspernatur suscipit ex labore exercitationem quidem commodi! Nesciunt, nemo, corporis mollitia laborum quaerat qui iure omnis deleniti, repellat maxime soluta hic!</p>
-                  </div>
-               </div>
-               {/* Tarjeta 4 */}
-               <div className={styles.card}>
-                  <div className={styles.cardHeader}>
-                     <div className={styles.checkbox}></div>
-                     <div className={styles.settingsIcon}>
-                        <FontAwesomeIcon icon={faBars} style={{ color: "white", fontSize: "25px" }} />
-                     </div>
-                  </div>
-                  <div className={styles.cardContent}>
-                     <h2>Titulo del plan</h2>
-                     <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Porro aspernatur suscipit ex labore exercitationem quidem commodi! Nesciunt, nemo, corporis mollitia laborum quaerat qui iure omnis deleniti, repellat maxime soluta hic!</p>
-                  </div>
-               </div>
-               {/* Tarjeta 5 */}
-               <div className={styles.card}>
-                  <div className={styles.cardHeader}>
-                     <div className={styles.checkbox}></div>
-                     <div className={styles.settingsIcon}>
-                        <FontAwesomeIcon icon={faBars} style={{ color: "white", fontSize: "25px" }} />
-                     </div>
-                  </div>
-                  <div className={styles.cardContent}>
-                     <h2>Titulo del plan</h2>
-                     <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Porro aspernatur suscipit ex labore exercitationem quidem commodi! Nesciunt, nemo, corporis mollitia laborum quaerat qui iure omnis deleniti, repellat maxime soluta hic!</p>
-                  </div>
-               </div>
-               {/* Tarjeta 6 */}
-               <div className={styles.card}>
-                  <div className={styles.cardHeader}>
-                     <div className={styles.checkbox}></div>
-                     <div className={styles.settingsIcon}>
-                        <FontAwesomeIcon icon={faBars} style={{ color: "white", fontSize: "25px" }} />
-                     </div>
-                  </div>
-                  <div className={styles.cardContent}>
-                     <h2>Titulo del plan</h2>
-                     <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Porro aspernatur suscipit ex labore exercitationem quidem commodi! Nesciunt, nemo, corporis mollitia laborum quaerat qui iure omnis deleniti, repellat maxime soluta hic!</p>
-                  </div>
-               </div>
-               {/* ... Se agregan las demás tarjetas aquí */}
+                  );
+               })}
             </div>
          </section>
       </div>

@@ -6,32 +6,38 @@ import corazon from "../../assets/images/corazon.png";
 import planEstudio from "../../assets/images/planEstudio.png";
 import { Link } from "react-router-dom/cjs/react-router-dom";
 
-const CreateStudyPlan1 = () => {
-
+const CreateStudyPlan1 = ({ preguntas }) => {
+   let selected = "";
    const [selectedOptions, setSelectedOptions] = useState({
-      trabajo: false,
-      estudio: false,
-      usoPersonal: false,
+      python: false,
+      javascript: false,
+      java: false,
+      cplusplus: false,
+      csharp: false,
    });
+
+   const nextPage = () => {
+   };
 
    const handleOptionClick = (option) => {
       const updatedOptions = {
-        ...selectedOptions,
-        [option]: !selectedOptions[option],
+         [option]: true,
       };
+      selected = option;
+      localStorage.setItem("pregunta1", selected);
       setSelectedOptions(updatedOptions);
       // Llama a la función de verificación de selección pasando las opciones actualizadas
       checkIfAnyOptionSelected(updatedOptions);
-    };
+   };
 
    const [isButtonDisabled, setIsButtonDisabled] = useState(true);
 
-  // Función para verificar si alguna opción está seleccionada
-const checkIfAnyOptionSelected = (options) => {
-   const isAnyOptionSelected = Object.values(options).some((value) => value === true);
-   // Actualiza el estado del botón
-   setIsButtonDisabled(!isAnyOptionSelected);
- };
+   // Función para verificar si alguna opción está seleccionada
+   const checkIfAnyOptionSelected = (options) => {
+      const isAnyOptionSelected = Object.values(options).some((value) => value === true);
+      // Actualiza el estado del botón
+      setIsButtonDisabled(!isAnyOptionSelected);
+   };
 
    return (
       <div className={styles.PlanContainer}>
@@ -47,74 +53,47 @@ const checkIfAnyOptionSelected = (options) => {
             <div className={styles.leftSection}>
                <div className={styles.Content}>
                   <div className={styles.welcomeText}>
-                     <h1>¡Hola! ¿Que te trae por aquí hoy? </h1>
+                     <h1>¡Hola! ¿De qué lenguaje de programación quieres crear el plan de estudios? </h1>
                   </div>
                   <div className={styles.optionsContainer}>
                      <div className={styles.option}>
-                        <input
-                           type="checkbox"
-                           id="trabajo"
-                           checked={selectedOptions.trabajo}
-                           onChange={() => handleOptionClick("trabajo")}
-                        />
-                        <label htmlFor="trabajo">Trabajo</label>
+                        <input type="checkbox" id="python" checked={selectedOptions.python} onChange={() => handleOptionClick("python")} />
+                        <label htmlFor="python">Python</label>
                      </div>
                      <div className={styles.option}>
-                        <input
-                           type="checkbox"
-                           id="estudio"
-                           checked={selectedOptions.estudio}
-                           onChange={() => handleOptionClick("estudio")}
-                        />
-                        <label htmlFor="estudio">Estudios</label>
+                        <input type="checkbox" id="javaScript" checked={selectedOptions.javascript} onChange={() => handleOptionClick("javascript")} />
+                        <label htmlFor="javaScript">JavaScript</label>
                      </div>
                      <div className={styles.option}>
-                        <input
-                           type="checkbox"
-                           id="usoPersonal"
-                           checked={selectedOptions.usoPersonal}
-                           onChange={() => handleOptionClick("usoPersonal")}
-                        />
-                        <label htmlFor="usoPersonal">Uso Personal</label>
+                        <input type="checkbox" id="java" checked={selectedOptions.java} onChange={() => handleOptionClick("java")} />
+                        <label htmlFor="java">Java</label>
+                     </div>
+                     <div className={styles.option}>
+                        <input type="checkbox" id="cplusplus" checked={selectedOptions.cplusplus} onChange={() => handleOptionClick("cplusplus")} />
+                        <label htmlFor="cplusplus">C++</label>
+                     </div>
+                     <div className={styles.option}>
+                        <input type="checkbox" id="csharp" checked={selectedOptions.csharp} onChange={() => handleOptionClick("csharp")} />
+                        <label htmlFor="csharp">C++</label>
                      </div>
                   </div>
                </div>
                <div className={styles.Button}>
-               <Link to="/create2">
-                  <button 
-                  className={styles.continuarButton} 
-                  disabled={isButtonDisabled}
-                  style={{
-                     opacity: isButtonDisabled ? '0.3' : '1',
-                     cursor: isButtonDisabled ? 'default' : 'pointer',
-                   }}
-                  onClick={() => handleOptionClick()}>
-                     Continuar &gt;
-                  </button>
-               </Link>
+                  <Link to="/create2">
+                     <button
+                        className={styles.continuarButton}
+                        disabled={isButtonDisabled}
+                        style={{
+                           opacity: isButtonDisabled ? "0.3" : "1",
+                           cursor: isButtonDisabled ? "default" : "pointer",
+                        }}
+                        onClick={() => nextPage()}>
+                        Continuar &gt;
+                     </button>
+                  </Link>
                </div>
             </div>
             <div className={styles.rightSection}>
-               {/*
-               <div className={styles.objectiveSection}>
-                  <h3 style={{ textAlign: "start", fontSize: "30px" }}>Objetivos</h3>
-                  <p className={`${styles.organizedParagraph} ${styles.adjustedLetter}`} style={{ textAlign: "justify" }}>
-                     Facilitar a los estudiantes un acceso personalizado a la excelencia académica mediante una plataforma educativa interactiva que se adapta de manera dinámica a sus necesidades individuales, fomentando la maximización del potencial de aprendizaje y el logro de objetivos educativos específicos.
-                  </p>
-               </div>
-               <div className={styles.benefitsSection} style={{ textAlign: "start" }}>
-                  <h3 style={{ textAlign: "start", fontSize: "30px" }}>Beneficios</h3>
-                  <p className={`${styles.organizedParagraph} ${styles.adjustedLetter}`} style={{ textAlign: "justify" }}>
-                     Experimenta un paradigma educativo transformador mediante la personalización inteligente de tu plan de estudios, proporcionando un enfoque centrado en el estudiante que impulsa la motivación intrínseca, la eficiencia del aprendizaje y el progreso significativo hacia tus metas académicas.
-                  </p>
-               </div>
-               <div className={`${styles.textSection} ${styles.center}`}>
-                  <h2>¿Ya tienes una cuenta?</h2>
-                  <Link to="/login" className={styles.signupButton}>
-                     Log In
-                  </Link>
-               </div>
-               */}
                <div className={styles.planImg}>
                   <img src={planEstudio} alt="Imagen" />
                </div>

@@ -1,10 +1,22 @@
-import React from "react";
+import React, { useEffect } from "react";
 import styles from "../styles.module.css";
 
-export const Descripcion = () => {
+export const Descripcion = ({ contenido }) => {
+   console.log(contenido);
+
+
    return (
-      <div className={styles.text}>
-         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, quisquam! Harum, aliquid asperiores commodi dolorem reiciendis expedita, eum magni vel mollitia, at recusandae sunt. Reprehenderit dolore modi consectetur consequatur tempore!</p>
+      <div id="parrafo" className={styles.text}>
+         {contenido &&
+            contenido.map((t, i) => {
+               return (
+                  <p class="text-description" key={i}>
+                     {t}
+                     <br />
+                  </p>
+               );
+            })}
+            
       </div>
    );
 };

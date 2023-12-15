@@ -4,8 +4,10 @@ import Book from "../../assets/images/book.png";
 import Background from "../../assets/images/Background.png";
 import { Link } from "react-router-dom/cjs/react-router-dom";
 import { env } from "../../config";
+import { useHistory } from "react-router-dom";
 
 const Register = () => {
+   const history = useHistory();
    const [formData, setFormData] = useState({
       firstName: "",
       lastName: "",
@@ -53,15 +55,17 @@ const Register = () => {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({
-               name: "Juancito",
-               lastName: "Ro",
-               username: "juan321",
-               email: "juan321@gmail.com",
-               password: "1234",
+               name: formData.firstName,
+               lastName: formData.lastName,
+               username: formData.username,
+               email: formData.email,
+               password: formData.password,
             }),
          });
          const json = await result.json();
          console.log(json);
+
+         setFormData({ firstName: "", lastName: "", username: "", email: "", password: "", confirmPassword: "" });
       } catch (e) {
          console.log(e);
       }

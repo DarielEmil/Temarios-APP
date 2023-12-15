@@ -28,16 +28,21 @@ const Login = () => {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({
-               email: "usuario22@example.com",
-               password: "123",
+               email: email,
+               password: pass,
             }),
          });
          const json = await result.json();
-         localStorage.setItem("token", json.token);
-         console.log(json);
-         console.log(localStorage);
-         history.push("/main");
-         window.location.reload();
+         if (json.ok) {
+            localStorage.setItem("token", json.token);
+            console.log(json);
+            console.log(localStorage);
+            history.push("/main");
+            window.location.reload();
+            localStorage.setItem("user", email);
+         }else{
+            alert("Usuario y contrasena inconrrecto")
+         }
       } catch (e) {
          console.log(e);
       }
@@ -57,7 +62,7 @@ const Login = () => {
       }
 
       // Simula una validación simple; deberías realizar la autenticación en tu backend
-      if (username === "ada" && password === "1234") {
+      if (username !== "" && password !== "") {
          signIn(username, password);
       } else {
          alert("Nombre de usuario o contraseña incorrectos");

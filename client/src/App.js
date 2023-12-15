@@ -39,6 +39,8 @@ function App() {
       console.log("oke");
    }, []);
 
+   const preguntas = {};
+
    return (
       <Router>
          <div className="App">
@@ -47,8 +49,24 @@ function App() {
                   <Route path="/main">
                      <Main />
                   </Route>
+
                   <Route path="/create">
-                     <CreateStudyPlan />
+                     <CreateStudyPlan preguntas={preguntas} />
+                  </Route>
+                  <Route path="/create2">
+                     <CreateStudyPlan2 preguntas={preguntas} />
+                  </Route>
+                  <Route path="/create3">
+                     <CreateStudyPlan3 preguntas={preguntas} />
+                  </Route>
+                  <Route path="/create4">
+                     <CreateStudyPlan4 />
+                  </Route>
+                  <Route path="/plan/:id">
+                     <SeccionPlanEstudio />
+                  </Route>
+                  <Route path="/contenido/:id/:semana">
+                     <DescripcionTema />
                   </Route>
                   <Route path="/">
                      <LandingSigned />
