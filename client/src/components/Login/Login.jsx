@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useHistory } from "react-router-dom";
 import "./login.css";
 import { Link } from "react-router-dom/cjs/react-router-dom";
 import { env } from "../../config.js";
@@ -8,6 +9,7 @@ const Login = () => {
    const [password, setPassword] = useState("");
    const [usernameError, setUsernameError] = useState("");
    const [passwordError, setPasswordError] = useState("");
+   const history = useHistory();
 
    const handleUsernameChange = (e) => {
       setUsername(e.target.value);
@@ -33,7 +35,9 @@ const Login = () => {
          const json = await result.json();
          localStorage.setItem("token", json.token);
          console.log(json);
-         console.log(localStorage)
+         console.log(localStorage);
+         history.push("/main");
+         window.location.reload();
       } catch (e) {
          console.log(e);
       }
@@ -55,7 +59,6 @@ const Login = () => {
       // Simula una validación simple; deberías realizar la autenticación en tu backend
       if (username === "ada" && password === "1234") {
          signIn(username, password);
-         alert("Login exitoso. Redirigiendo...");
       } else {
          alert("Nombre de usuario o contraseña incorrectos");
          if (!message[0]) {
