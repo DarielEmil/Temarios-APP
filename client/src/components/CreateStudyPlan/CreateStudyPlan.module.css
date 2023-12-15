@@ -1,0 +1,198 @@
+body {
+   margin: 0;
+   padding: 0;
+   overflow: auto;
+}
+
+/* Estilos para el contenedor principal */
+.PlanContainer {
+   display: flex;
+   flex-wrap: wrap;
+   background-color: white;
+   overflow: auto;
+   height: 100vh;
+   /* Establece la altura del contenedor al 100% del viewport height */
+}
+
+/* Estilos para el menú superior */
+.topMenu {
+   position: absolute;
+   top: 0;
+   left: 0;
+   right: 0;
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   padding: 8px 20px;
+   z-index: 2;
+   max-width: 8%;
+}
+
+.topMenu p {
+   font-size: 16px;
+}
+
+.logo {
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+}
+
+.logoImg {
+   max-width: 30px;
+   margin-right: 10px;
+}
+
+.studyPath {
+   font-weight: bold;
+   font-family: Poppins;
+   color: #4C519C;
+}
+
+/* Estilos para el contenedor de las 2 secciones */
+.leftRightContainer {
+   display: flex;
+   justify-content: space-between;
+   width: 100%;
+}
+
+/* Estilos para la sección izquierda */
+.leftSection {
+   /*background-color:green;*/
+   flex: 1;
+   padding: 20px;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+}
+
+/* Contenidos de la seccion izquierda */
+.Content {
+   margin-top: auto;
+}
+
+.welcomeText {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   text-align: center;
+   flex-direction: column;
+   margin-bottom: 10%;
+   /* Subo un poco el texto hacia arriba */
+}
+
+.welcomeText h1 {
+   color: #4C519C;
+   font-weight: 300;
+}
+
+/* Estilos para las opciones seleccionables */
+.optionsContainer {
+   display: flex;
+   flex-direction: row;
+   flex-wrap: wrap;
+   justify-content: center;
+   align-items: center;
+   gap: 80px;
+}
+
+.optionsContainer:hover {
+   cursor: pointer;
+}
+
+.option {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   font-size: 16px;
+   color: #777;
+   /* Color de fuente gris */
+   cursor: pointer;
+   margin-bottom: 10px;
+   padding: 10px;
+   border: 1px solid #4C519C;
+   /* Borde 1px sólido negro */
+   border-radius: 50px;
+   /* Bordes redondeados */
+   width: 140px;
+}
+
+.option input[type="checkbox"] {
+   display: none;
+   /* Oculta el checkbox predeterminado */
+}
+
+/* Estilos para el checkbox personalizado */
+.option input[type="checkbox"]+label:before {
+   content: "";
+   display: inline-block;
+   width: 20px;
+   height: 20px;
+   border: 1px solid #4C519C;
+   border-radius: 50%;
+   /* Bordes redondeados */
+   margin-right: 10px;
+   background-color: transparent;
+}
+
+/* Estilo cuando el checkbox está seleccionado */
+.option input[type="checkbox"]:checked+label:before {
+   background-color: #4C519C;
+   /* Color de relleno morado */
+}
+
+.option label {
+   flex: 1;
+   display: flex;
+   align-items: center;
+   cursor: pointer;
+}
+
+/* Estilos para la sección derecha */
+.rightSection {
+   flex: 0.5;
+   background-color: #4F67E8;
+   border-top-left-radius: 20px;
+   border-bottom-left-radius: 20px;
+   padding: 100px;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+}
+
+.planImg {
+   max-width: 100%;
+}
+
+
+p {
+   color: black;
+   font-family: Nunito;
+   font-style: normal;
+   font-weight: normal;
+}
+
+.Button {
+   margin-top: auto;
+   align-self: flex-end;
+   /* Alinea el botón al final del contenedor */
+   margin-top: auto;
+}
+
+.continuarButton {
+   background-color: #f0f0f0;
+   /* Color gris claro */
+   color: #B3B3B3;
+   /* Color de texto */
+   font-family: "Inter", Helvetica;
+   padding: 10px 20px;
+   border: none;
+   border-radius: 17px;
+   cursor: pointer;
+}
+
+.continuarButton:hover {
+   background-color: #ddd;
+   /* Cambiar color al pasar el mouse */
+}

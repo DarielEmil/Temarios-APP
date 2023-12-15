@@ -1,0 +1,134 @@
+.container {
+   margin: 100px 150px 100px 120px;
+   text-align: start;
+}
+
+.container h3 {
+   font-size: 30px;
+   font-weight: 800;
+}
+
+.weeksContainer {
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+}
+
+.weeksContainer a {
+   text-decoration: none;
+}
+
+.week {
+   display: flex;
+   border-radius: 10px;
+   width: 55%;
+   margin-top: 30px;
+   padding: 45px 20px 45px 30px;
+   text-align: start;
+   background-color: #4c519c;
+}
+
+.week > a {
+   width: 100%;
+}
+.week p {
+   margin-top: -5px;
+   font-size: 20px;
+   color: #fff;
+}
+
+.week h4 {
+   font-size: 40px;
+   color: #fff;
+}
+
+.week input {
+   margin-top: 20px;
+   width: 10%;
+}
+
+.exercises {
+   margin-top: 30px;
+   border-radius: 10px;
+   background-color: #d1d1d1;
+   text-align: start;
+   display: flex;
+   justify-content: space-between;
+   padding: 50px 20px 50px 30px;
+}
+
+.exercises a {
+   color: #4c519c;
+   font-size: 20px;
+}
+
+/* CONTAINER TEMA */
+
+.containerTema {
+   margin: 100px 150px 100px 120px;
+   text-align: start;
+}
+
+.containerTema h5 {
+   font-size: 25px;
+   color: #4c519c;
+}
+.containerTema h3 {
+   font-size: 45px;
+   color: #000;
+}
+
+.containerTema .text {
+   border-radius: 10px;
+   padding: 50px 20px 50px 30px;
+   background-color: #4c519c;
+}
+
+.containerTema .text p {
+   color: #fff;
+   font-size: 25px;
+   line-height: 2;
+   text-align: justify;
+}
+
+.btnNext {
+   color: #fff;
+   background-color: #4c519c;
+   padding: 10px 25px;
+   font-size: 20px;
+   float: right;
+   margin-top: 20px;
+   border-radius: 10px;
+}
+
+.btnNext:hover {
+   cursor: pointer;
+}
+
+/* EXERCISES */
+
+.exercisesContainer {
+   margin-top: 10px;
+   display: flex;
+   border-radius: 10px;
+   width: 800px;
+   padding: 50px 20px 50px 30px;
+   background-color: #4c519c;
+}
+
+
+.exercisesContainer p{
+   color: #fff;
+   width: 80%;
+}
+
+.btnCompletar{
+   padding: 5px 15px;
+   font-size: 20px;
+   border-radius: 10px;
+   margin-left: 20px;
+}
+
+.btnCompletar:hover{
+   cursor: pointer;
+}

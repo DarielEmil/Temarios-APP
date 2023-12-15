@@ -1,0 +1,198 @@
+body {
+   margin: 0;
+   padding: 0;
+   overflow: auto;
+}
+
+/* Estilos para el contenedor principal */
+.PlanContainer {
+   display: flex;
+   flex-wrap: wrap;
+   background-color: white;
+   overflow: auto;
+   height: 100vh;
+   /* Establece la altura del contenedor al 100% del viewport height */
+}
+
+/* Estilos para el menú superior */
+.topMenu {
+   position: absolute;
+   top: 0;
+   left: 0;
+   right: 0;
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   padding: 8px 20px;
+   z-index: 2;
+   max-width: 8%;
+}
+
+.topMenu p {
+   font-size: 16px;
+}
+
+.logo {
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+}
+
+.logoImg {
+   max-width: 30px;
+   margin-right: 10px;
+}
+
+.studyPath {
+   font-weight: bold;
+   font-family: Poppins;
+   color: #4C519C;
+}
+
+/* Estilos para el contenedor de las 2 secciones */
+.leftRightContainer {
+   display: flex;
+   justify-content: space-between;
+   width: 100%;
+}
+
+/* Estilos para la sección izquierda */
+.leftSection {
+   /*background-color:green;*/
+   flex: 1;
+   padding: 20px;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+}
+
+/* Contenidos de la seccion izquierda */
+.Content {
+   margin-top: auto;
+}
+
+.welcomeText {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   text-align: center;
+   flex-direction: column;
+   margin-bottom: 10%;
+   /* Subo un poco el texto hacia arriba */
+}
+
+.welcomeText h1 {
+   color: #4C519C;
+   font-weight: 200;
+}
+
+/* Estilos para las opciones seleccionables */
+.optionsContainer {
+   display: flex;
+   flex-direction: row;
+   flex-wrap: wrap;
+   justify-content: center;
+   align-items: center;
+}
+
+.search{
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   font-size: 16px;
+   color: #777;/* Color de fuente gris */
+   margin-bottom: 10px;
+   width:500px;
+   gap: 10px;
+}
+
+.searchInput {
+   background-color: white; /* Fondo blanco del input de búsqueda */
+   color: #4F67E8;
+   border: 1px solid #4C519C;
+   padding: 6px;
+   border-radius: 17px;
+   max-width:100%;
+}
+
+.searchInput::placeholder{
+   margin-left: 5px;
+   font-size: 15px;
+}
+
+.searchButton {
+   margin-top: 5px;
+   background-color: #5D64CB;
+   color: #FFFFFF;
+   padding: 7px 20px;
+   border: none;
+   border-radius: 17px;
+   cursor: pointer;
+}
+
+.DeclarationButton{
+   display: flex;
+   align-items: flex-start;
+   justify-content: center;
+   margin-bottom: 10px;
+   padding: 3px;
+   border: 1px solid #4C519C;
+   border-radius: 20px;
+   width:280px;
+   cursor:pointer;
+}
+.DeclarationButton p{
+   text-align: center;
+   color: #777;/* Color de fuente gris */
+   font-size: 18px;
+   margin-bottom:5px;
+}
+
+/* Estilos para la sección derecha */
+.rightSection {
+   flex: 0.5;
+   background-color: #4F67E8;
+   border-top-left-radius: 20px;
+   border-bottom-left-radius: 20px;
+   padding: 100px;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+}
+
+.planImg {
+   max-width: 100%;
+}
+
+
+p {
+   color: black;
+   font-family: Nunito;
+   font-style: normal;
+   font-weight: normal;
+}
+
+.Button {
+   margin-top: auto;
+   align-self: flex-end;
+   /* Alinea el botón al final del contenedor */
+   margin-top: auto;
+}
+
+.continuarButton {
+   background-color: #f0f0f0;
+   /* Color gris claro */
+   color: #B3B3B3;
+   /* Color de texto */
+   font-family: "Inter", Helvetica;
+   padding: 10px 20px;
+   border: none;
+   border-radius: 17px;
+   cursor: pointer;
+}
+
+.continuarButton:hover {
+   background-color: #ddd;
+   /* Cambiar color al pasar el mouse */
+}
