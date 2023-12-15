@@ -84,7 +84,7 @@ body {
 
 .welcomeText h1 {
    color: #4C519C;
-   font-weight: 300;
+   font-weight: 200;
 }
 
 /* Estilos para las opciones seleccionables */
@@ -94,59 +94,59 @@ body {
    flex-wrap: wrap;
    justify-content: center;
    align-items: center;
-   gap: 80px;
 }
 
-.optionsContainer:hover {
-   cursor: pointer;
-}
-
-.option {
+.search{
    display: flex;
    align-items: center;
-   justify-content: center;
+   justify-content: space-between;
    font-size: 16px;
-   color: #777;
-   /* Color de fuente gris */
-   cursor: pointer;
+   color: #777;/* Color de fuente gris */
    margin-bottom: 10px;
-   padding: 10px;
+   width:500px;
+   gap: 10px;
+}
+
+.searchInput {
+   background-color: white; /* Fondo blanco del input de búsqueda */
+   color: #4F67E8;
    border: 1px solid #4C519C;
-   /* Borde 1px sólido negro */
-   border-radius: 50px;
-   /* Bordes redondeados */
-   width: 140px;
+   padding: 6px;
+   border-radius: 17px;
+   max-width:100%;
 }
 
-.option input[type="checkbox"] {
-   display: none;
-   /* Oculta el checkbox predeterminado */
+.searchInput::placeholder{
+   margin-left: 5px;
+   font-size: 15px;
 }
 
-/* Estilos para el checkbox personalizado */
-.option input[type="checkbox"]+label:before {
-   content: "";
-   display: inline-block;
-   width: 20px;
-   height: 20px;
-   border: 1px solid #4C519C;
-   border-radius: 50%;
-   /* Bordes redondeados */
-   margin-right: 10px;
-   background-color: transparent;
-}
-
-/* Estilo cuando el checkbox está seleccionado */
-.option input[type="checkbox"]:checked+label:before {
-   background-color: #4C519C;
-   /* Color de relleno morado */
-}
-
-.option label {
-   flex: 1;
-   display: flex;
-   align-items: center;
+.searchButton {
+   margin-top: 5px;
+   background-color: #5D64CB;
+   color: #FFFFFF;
+   padding: 7px 20px;
+   border: none;
+   border-radius: 17px;
    cursor: pointer;
+}
+
+.DeclarationButton{
+   display: flex;
+   align-items: flex-start;
+   justify-content: center;
+   margin-bottom: 10px;
+   padding: 3px;
+   border: 1px solid #4C519C;
+   border-radius: 20px;
+   width:280px;
+   cursor:pointer;
+}
+.DeclarationButton p{
+   text-align: center;
+   color: #777;/* Color de fuente gris */
+   font-size: 18px;
+   margin-bottom:5px;
 }
 
 /* Estilos para la sección derecha */

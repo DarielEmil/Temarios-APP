@@ -9,6 +9,10 @@ import DescripcionTema from "./components/SeccionPlanEstudio/DescripcionTema/Des
 import Exercises from "./components/SeccionPlanEstudio/Exercises/Exercises";
 import LandingSigned from "./components/LandingPage/LandingSigned";
 import Main from "./components/MainScreen/MainScreen";
+import CreateStudyPlan from "./components/CreateStudyPlan/CreateStudyPlan1";
+import CreateStudyPlan2 from "./components/CreateStudyPlan/CreateStudyPlan2";
+import CreateStudyPlan3 from "./components/CreateStudyPlan/CreateStudyPlan3";
+import CreateStudyPlan4 from "./components/CreateStudyPlan/CreateStudyPlan4";
 import { useEffect } from "react";
 import { env } from "./config";
 
@@ -53,6 +57,15 @@ function App() {
                </Route>
                <Route path="/exercise-1">
                   <Exercises />
+               </Route>
+               <Route path="/create2">
+                  <CreateStudyPlan2 />
+               </Route>
+               <Route path="/create3">
+                  <CreateStudyPlan3 />
+               </Route>
+               <Route path="/create4">
+                  <CreateStudyPlan4 />
                </Route>
                <Route path="/">
                   <Landing />
