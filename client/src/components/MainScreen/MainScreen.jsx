@@ -6,7 +6,17 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlus } from "@fortawesome/free-solid-svg-icons";
 import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
+import { useHistory } from "react-router-dom";
+
 const Main = () => {
+   const history = useHistory();
+
+   function logOut() {
+      localStorage.removeItem("token");
+      history.push("/login");
+      window.location.reload();
+   }
+
    return (
       <div className={styles.MainContainer}>
          <nav className={styles.topMenu}>
@@ -19,6 +29,7 @@ const Main = () => {
             <div className={styles.userSection}>
                <img src={userIcon} alt="User Icon" className={styles.userIcon} />
                <span className={styles.userName}>Juan Pedro</span>
+               <button onClick={logOut}>Logout</button>
             </div>
          </nav>
          <br></br>
@@ -26,6 +37,10 @@ const Main = () => {
          <br></br>
          <Link to="/create">
          <button className={styles.createButton}><FontAwesomeIcon icon={faPlus} style={{color: "#4f67e8",}} /> Crea un plan de estudio</button>
+         <Link to="/">
+            <button className={styles.createButton}>
+               <FontAwesomeIcon icon={faPlus} style={{ color: "#4f67e8" }} /> Crea un plan de estudio
+            </button>
          </Link>
          <br></br>
          <br></br>
@@ -41,7 +56,7 @@ const Main = () => {
                   {/* Aquí estará el buscador */}
                   <input type="text" placeholder="Buscar" className={styles.searchInput} />
                   {/* Icono de la lupa */}
-                  <FontAwesomeIcon icon={faMagnifyingGlass} style={{color: "#4f67e8", fontSize: "20px"}} className={styles.searchIcon} />
+                  <FontAwesomeIcon icon={faMagnifyingGlass} style={{ color: "#4f67e8", fontSize: "20px" }} className={styles.searchIcon} />
                </div>
             </header>
             {/* Tarjetas */}
@@ -51,7 +66,9 @@ const Main = () => {
                <div className={styles.card}>
                   <div className={styles.cardHeader}>
                      <div className={styles.checkbox}></div>
-                     <div className={styles.settingsIcon}><FontAwesomeIcon icon={faBars} style={{color: "white", fontSize: "25px"}}/></div>
+                     <div className={styles.settingsIcon}>
+                        <FontAwesomeIcon icon={faBars} style={{ color: "white", fontSize: "25px" }} />
+                     </div>
                   </div>
                   <div className={styles.cardContent}>
                      <h2>Titulo del plan</h2>
@@ -62,7 +79,9 @@ const Main = () => {
                <div className={styles.card}>
                   <div className={styles.cardHeader}>
                      <div className={styles.checkbox}></div>
-                     <div className={styles.settingsIcon}><FontAwesomeIcon icon={faBars} style={{color: "white", fontSize: "25px"}}/></div>
+                     <div className={styles.settingsIcon}>
+                        <FontAwesomeIcon icon={faBars} style={{ color: "white", fontSize: "25px" }} />
+                     </div>
                   </div>
                   <div className={styles.cardContent}>
                      <h2>Titulo del plan</h2>
@@ -73,7 +92,9 @@ const Main = () => {
                <div className={styles.card}>
                   <div className={styles.cardHeader}>
                      <div className={styles.checkbox}></div>
-                     <div className={styles.settingsIcon}><FontAwesomeIcon icon={faBars} style={{color: "white", fontSize: "25px"}}/></div>
+                     <div className={styles.settingsIcon}>
+                        <FontAwesomeIcon icon={faBars} style={{ color: "white", fontSize: "25px" }} />
+                     </div>
                   </div>
                   <div className={styles.cardContent}>
                      <h2>Titulo del plan</h2>
@@ -84,7 +105,9 @@ const Main = () => {
                <div className={styles.card}>
                   <div className={styles.cardHeader}>
                      <div className={styles.checkbox}></div>
-                     <div className={styles.settingsIcon}><FontAwesomeIcon icon={faBars} style={{color: "white", fontSize: "25px"}}/></div>
+                     <div className={styles.settingsIcon}>
+                        <FontAwesomeIcon icon={faBars} style={{ color: "white", fontSize: "25px" }} />
+                     </div>
                   </div>
                   <div className={styles.cardContent}>
                      <h2>Titulo del plan</h2>
@@ -95,7 +118,9 @@ const Main = () => {
                <div className={styles.card}>
                   <div className={styles.cardHeader}>
                      <div className={styles.checkbox}></div>
-                     <div className={styles.settingsIcon}><FontAwesomeIcon icon={faBars} style={{color: "white", fontSize: "25px"}}/></div>
+                     <div className={styles.settingsIcon}>
+                        <FontAwesomeIcon icon={faBars} style={{ color: "white", fontSize: "25px" }} />
+                     </div>
                   </div>
                   <div className={styles.cardContent}>
                      <h2>Titulo del plan</h2>
@@ -106,7 +131,9 @@ const Main = () => {
                <div className={styles.card}>
                   <div className={styles.cardHeader}>
                      <div className={styles.checkbox}></div>
-                     <div className={styles.settingsIcon}><FontAwesomeIcon icon={faBars} style={{color: "white", fontSize: "25px"}}/></div>
+                     <div className={styles.settingsIcon}>
+                        <FontAwesomeIcon icon={faBars} style={{ color: "white", fontSize: "25px" }} />
+                     </div>
                   </div>
                   <div className={styles.cardContent}>
                      <h2>Titulo del plan</h2>
