@@ -26,12 +26,14 @@ const Login = () => {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({
-               email: "ada@gmail.com",
-               password: "1234",
+               email: "usuario22@example.com",
+               password: "123",
             }),
          });
          const json = await result.json();
+         localStorage.setItem("token", json.token);
          console.log(json);
+         console.log(localStorage)
       } catch (e) {
          console.log(e);
       }
